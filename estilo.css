@@ -1,0 +1,302 @@
+/* Fondo y estilos generales */
+body {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Regalo */
+  .gift-container {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .gift {
+    width: 250px;
+    height: 250px;
+    background: url('regalo-abierto-unscreen.gif') no-repeat center / cover;
+    transition: transform 0.5s ease;
+    animation: playGif 5s infinite paused; /* El GIF está pausado inicialmente */
+  }
+  
+  @keyframes playGif {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+  
+  .gift:hover {
+    transform: scale(1.1);
+  }
+  
+  .letter {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    width: 360px;
+    z-index: 1000;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+  border: 3px solid linear-gradient(
+    to right,
+    rgb(204, 0, 0),
+    rgb(34, 139, 34),
+    rgb(255, 215, 0)
+  ) 1;
+
+  }
+  .card.letter {
+    margin-top: -110px; /* Ajusta este valor para mover la carta más arriba */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .gift-gif {
+    display: none; /* Lo ocultamos inicialmente */
+    width: 100%; /* Ajusta el tamaño del GIF */
+    height: auto;
+  }
+  
+  .letter.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(20px);
+  }
+  
+  /* Mostrar el gif solo cuando se abra la carta */
+  .letter.open .gift-gif {
+    display: block;
+  }  
+
+  .letter::after{
+    content: "🎄🎁";
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 24px;
+    color:rgb(204, 0, 0);
+  }
+  
+  .message {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    margin: 0;
+    position: relative;
+  }
+  
+  /* Muñeco de nieve */
+  .snowman-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 100;
+  }
+  
+  .snowman {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0.8); /* Escala para dispositivos pequeños */
+  }
+  
+  .snowball {
+    background-color: #fff;
+    border: 2px solid #d9d9d9;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .head {
+    width: 50px;
+    height: 50px;
+    margin-bottom: -10px;
+  }
+  
+  .body {
+    width: 80px;
+    height: 80px;
+    margin-bottom: -10px;
+  }
+  
+  .base {
+    width: 110px;
+    height: 110px;
+  }
+  
+  /* Sombrero */
+  .hat {
+    position: absolute;
+    background: #333;
+    width: 40px;
+    height: 50px;
+    top: -60px;
+    border-radius: 2px;
+  }
+  
+  .hat-brim {
+    position: absolute;
+    background: #333;
+    width: 60px;
+    height: 10px;
+    top: -10px;
+    border-radius: 2px;
+  }
+  
+  /* Ojos */
+  .eyes {
+    position: absolute;
+    background: #333;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    top: 15px;
+  }
+  
+  .left-eye {
+    left:40px;
+  }
+  
+  .right-eye {
+    right: 40px;
+  }
+  
+  /* Nariz */
+  .nose {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: orange;
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Botones */
+  .buttons {
+    position: absolute;
+    background: #000;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+  }
+  
+  .button1 {
+    top: 50px;
+  }
+  
+  .button2 {
+    top: 70px;
+  }
+  
+  .button3 {
+    top: 90px;
+  }
+  .botones{
+    margin-top: 40px;
+  }
+  .butons{
+    border-radius: 8px;
+    width: 60px;
+    height: 40px;
+  }
+  .butons1{
+
+    border-radius: 8px;
+    width: 60px;
+    height: 40px;
+  }
+  .butons2{
+    border-radius: 8px;
+    width: 60px;
+    height: 40px;
+  }
+  .que{
+    border:1px solid #fff;
+  }
+  .card-body{
+    border-radius: 6px;
+  }
+  /* Contenedor de nieve acumulada */
+.snow-ground {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10%; /* Ajusta el porcentaje para diferentes tamaños de acumulación */
+  background:  #fff; /* Efecto degradado de nieve */
+  box-shadow: 0px -5px 10px rgba(255, 255, 255, 0.5); /* Suavidad del borde superior */
+  z-index: 1;
+}
+
+/* Responsividad para diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+  .snow-ground {
+      height: 15%; /* Aumenta la altura en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .snow-ground {
+      height: 20%; /* Más altura para dispositivos muy pequeños */
+  }
+}
+audio{
+  border-radius: 10px; /* Bordes redondeados */
+  width: 100%; /* Hacer el reproductor más ancho */
+  background-color: #1c1c1c; /* Fondo oscuro */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+/* Cambiar color del botón Play/Pause */
+audio::-webkit-media-controls-play-button {
+  background-color: #ff6347; /* Color de fondo */
+  border-radius: 50%; /* Bordes redondeados */
+}
+
+.custom-audio-player {
+  width: 100%;
+  text-align: center;
+  background: #333;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #333;
+  background-image: #333;
+}
+
+button {
+  background-color: #ff6347;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  width: 200px;
+  cursor: pointer;
+}
